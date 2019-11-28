@@ -1,9 +1,9 @@
-[submodule "example/lib/spdlog"]
-	path = example/lib/spdlog
+[submodule "deps/lib/spdlog"]
+	path = deps/lib/spdlog
 	url = git@github.com:gabime/spdlog.git
-[submodule "example/lib/msgpack-c"]
-	path = example/lib/msgpack-c
+[submodule "deps/lib/msgpack-c"]
+	path = deps/lib/msgpack-c
 	url = git@github.com:msgpack/msgpack-c.git
-[submodule "example/lib/libzmq"]
-	path = example/lib/libzmq
+[submodule "deps/lib/libzmq"]
+	path = deps/lib/libzmq
 	url = git@github.com:zeromq/libzmq.git

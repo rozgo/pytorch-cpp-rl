@@ -38,7 +38,15 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
 endif(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
 
 # Dependencies
+
+# Spdlog
+add_subdirectory(deps/lib/spdlog)
+# ZMQ
+option(ZMQ_BUILD_TESTS "" OFF)
+add_subdirectory(deps/lib/libzmq)
+
 ## PyTorch
+set(Torch_DIR /home/rozgo/deeprl/libtorch/libtorch-cxx11-abi-shared-with-deps-1.3.1/libtorch/share/cmake/Torch)
 if (NOT TORCH_FOUND)
     find_package(Torch REQUIRED)
     if (TORCH_CXX_FLAGS)
@@ -84,6 +92,8 @@ option(CPPRL_BUILD_EXAMPLE "Whether or not to build the CppRl Gym example" ON)
 if (CPPRL_BUILD_EXAMPLE)
     add_subdirectory(example)
 endif(CPPRL_BUILD_EXAMPLE)
+
+add_subdirectory(env_server)
 
 # Recurse into source tree
 add_subdirectory(src)
